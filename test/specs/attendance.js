@@ -23,8 +23,16 @@ describe('Attendance App', () => {
         await markAttendanceButton.click()
 
         // 7. Add Attendance button
-        const addAttendanceButton = await $('button=Add Attendance')   // by visible text
+        const addAttendanceButton = await $('button=Add Attandance')   // by visible text
         await addAttendanceButton.click()
+
+        // 8. Wait for the popup 'Mark' button to appear
+        const markButton = await $('=Mark')
+        await markButton.waitForDisplayed({ timeout: 5000 })
+        await markButton.click()
+
+
+
 
 
 
