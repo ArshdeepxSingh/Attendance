@@ -6,27 +6,27 @@ describe('Attendance App', () => {
         await browser.url('https://employee.srchoutsoftware.com/employee/login')
         await browser.pause(2000)
 
-        // 2. Enter email
+        // 2. Enter YOUR OWN email
         const emailInput = await $('[name="email"]')
         await emailInput.setValue('arshdeep@srchoutsoftware.com')
 
-        // 3. Enter password
-        const passwordInput = await $('[name="password"]') // confirm if this is the actual attribute
+        // 3. Enter YOUR OWN password
+        const passwordInput = await $('[name="password"]') 
         await passwordInput.setValue('Arshdeep@8595237548')
 
         // 4. Click login button
         const loginButton = await $('button[type="submit"]')
         await loginButton.click()
 
-       // 6. Mark attendance button
+        // 5. Mark attendance button
         const markAttendanceButton = await $('/html/body/div[1]/div[1]/div/ul/li[2]/a/p')
         await markAttendanceButton.click()
 
-        // 7. Add Attendance button
+        // 6. Add Attendance button
         const addAttendanceButton = await $('button=Add Attandance')   // by visible text
         await addAttendanceButton.click()
 
-        // 8. Wait for the popup 'Mark' button to appear
+        // 7. Wait for the popup 'Mark' button to appear
         const markButton = await $('=Mark')
         await markButton.waitForDisplayed({ timeout: 5000 })
         await markButton.click()
